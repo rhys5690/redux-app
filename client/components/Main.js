@@ -1,13 +1,15 @@
 import React from 'react';
-import {
-  Link
-} from 'react-router';
+import { Link } from 'react-router';
+import propTypes from 'prop-types';
 
-const Main = react.createClass({
+const Main = React.createClass({
   render() {
     return (
       <div>
-      <h1 to='/'> Tedogram </h1>
+        <h1>
+          <Link to='/'>Tedogram</Link>
+        </h1>
+        {React.cloneElement(this.props.children, this.props)}
       </div>
     )
   }
