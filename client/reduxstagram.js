@@ -10,11 +10,11 @@ import PhotoGrid from './components/PhotoGrid';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 const router = (
-  <Router history={browseHistory}>
-    <Rout path='/' component={Main}>
+  <Router history={browserHistory}>
+    <Route path='/' component={Main}>
       <IndexRoute component={PhotoGrid}></IndexRoute>
       <Route path='/view/:postId' component={Single}></Route>
-    </Rout>
+    </Route>
   </Router>
 )
 
