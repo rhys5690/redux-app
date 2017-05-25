@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
 import propTypes from 'prop-types';
+import Photo from './Photo';
 
-const Single = React.createClass({
+const PhotoGrid = React.createClass({
   render() {
     return (
     <div className="photo-grid">
-      <pre>
-        {JSON.stringify(this.props.posts, null, ' ')}
-      </pre>
+      {this.props.posts.map((post, i) => <Photo {...this.props} key={i} i={i} post={post} />)}
     </div>
     )
   }
 });
 
-export default Single;
+export default PhotoGrid;
