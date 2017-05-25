@@ -6,7 +6,9 @@ const Single = React.createClass({
   render() {
     return (
     <div className="photo-grid">
-    photogrid
+      <pre>
+        {JSON.stringify(this.props.posts, null, ' ')}
+      </pre>
     </div>
     )
   }
