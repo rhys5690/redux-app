@@ -1,4 +1,4 @@
-import { createStore, compse } from 'redux';
+import { createStore, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
@@ -16,7 +16,12 @@ const defaultState = {
   comments
 };
 
-const store = createStore(rootReducer, defaultState);
+//Check for redux dev tools chrome extension and add to store
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
+
+const store = createStore(rootReducer, defaultState, enhancers);
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
